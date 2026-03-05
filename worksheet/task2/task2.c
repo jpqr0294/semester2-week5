@@ -14,15 +14,17 @@ int main(void){
 	char hex[9];
 	
 	printf("Enter a hexadecimal:");
-	scanf("%8s", hex);
+	scanf("%8s", hex); //reads up to 8 digits
 
-	int len = strlen(hex);
+	int len = strlen(hex); //finds length of hex
 
-	// if input contains invalid hex digit
+	//for loop runs from 0 to len-1 
 	for(int i = 0; i<len; i++) {
 		char c = hex[i];
 		int num;
 
+
+		//if logic for finding value off ascii codes
 		if (c >= '0' && c <= '9') {
 			num = c - '0';
 		} else if (c >= 'A' && c <= 'F') {
@@ -32,8 +34,10 @@ int main(void){
 		} else {
 			printf("Error: Invalid Hexadecimal\n");
 			return 1;
+			//not valid and terminates
 		}
 		decimal = decimal * 16 + num;
+		//multiplies by 16 each pass and adds the value of the current num to the decimal
 	}
 	
 	
